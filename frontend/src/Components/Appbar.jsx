@@ -12,7 +12,7 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
-import logo1 from "../Images/logo1.jpg";
+import image14 from "../Images/image14.svg";
 
 const drawerWidth = 240;
 
@@ -32,10 +32,20 @@ const useStyles = makeStyles((theme) => ({
     width: drawerWidth,
   },
   // necessary for content to be below app bar
-  //   toolbar: theme.mixins.toolbar,
+  // toolbar: theme.mixins.toolbar,
+  toolbar: {
+    paddingBottom: "3%",
+  },
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
+  },
+  logo: {
+    fontFamily: "'Poppins', sans-serif",
+  },
+  logo1: {
+    fontFamily: "'Poppins', sans-serif",
+    letterSpacing: "0.15px",
   },
 }));
 
@@ -56,9 +66,10 @@ export default function PermanentDrawerLeft() {
             display: "flex",
             flexDirection: "row",
             justifyContent: "space-between",
+            backgroundColor: "#3F0E40",
           }}
         >
-          <Typography>Hello world</Typography>
+          <Typography className={classes.logo1}>KEYWORDS</Typography>
           <h5>Hello</h5>
         </Toolbar>
       </AppBar>
@@ -74,16 +85,16 @@ export default function PermanentDrawerLeft() {
         {/* <h2>Hello</h2> */}
         <div style={{ display: "flex", flexDirection: "row" }}>
           <img
-            src={logo1}
+            src={image14}
             style={{
-              width: "20%",
-              height: "80%",
-              marginTop: "2.55%",
+              // width: "52.6px",
+              // height: "52.6px",
+              // marginTop: "2.55%",
               borderRadius: "100%",
               alignItems: "center",
             }}
           ></img>
-          <h3>hello</h3>
+          <h3 className={classes.logo}>TermMonitor</h3>
         </div>
         <Divider />
         <List>
