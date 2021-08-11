@@ -10,9 +10,14 @@ import Divider from "@material-ui/core/Divider";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
 import image14 from "../Images/image14.svg";
+import HomeIcon from "@material-ui/icons/Home";
+import GroupIcon from "@material-ui/icons/Group";
+import Vector from "../Images/Vector.png";
+import StarIcon from "@material-ui/icons/Star";
+import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
+import "./../Components/Appbar.css";
+import Home from "../Pages/Home";
 
 const drawerWidth = 240;
 
@@ -46,6 +51,14 @@ const useStyles = makeStyles((theme) => ({
   logo1: {
     fontFamily: "'Poppins', sans-serif",
     letterSpacing: "0.15px",
+    color: "white",
+  },
+  listItemText: {
+    color: "red",
+    fontFamily: "'Exo', sans-serif",
+    fontWeight: "500",
+    fontSize: "14px",
+    letterSpacing: "0.1px",
   },
 }));
 
@@ -98,29 +111,67 @@ export default function PermanentDrawerLeft() {
         </div>
         <Divider />
         <List>
-          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          <ListItem>
+            <ListItemIcon>
+              {" "}
+              <HomeIcon />{" "}
+            </ListItemIcon>
+            <ListItemText className="listItemText">Add Keywords</ListItemText>
+          </ListItem>
         </List>
-        <Divider />
         <List>
-          {["All mail", "Trash", "Spam"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
+          <ListItem>
+            <ListItemIcon>
+              {" "}
+              <GroupIcon />{" "}
+            </ListItemIcon>
+            <ListItemText className="listItemText">Matches</ListItemText>
+          </ListItem>
+        </List>
+        <List>
+          <ListItem>
+            <ListItemIcon>
+              <img src={Vector}></img>
+            </ListItemIcon>
+            <ListItemText className="listItemText">Manage sources</ListItemText>
+          </ListItem>
+        </List>
+        <List>
+          <ListItem>
+            <ListItemIcon>
+              <img src={Vector}></img>
+            </ListItemIcon>
+            <ListItemText className="listItemText">Integration</ListItemText>
+          </ListItem>
+        </List>
+        <List>
+          <ListItem>
+            <ListItemIcon>
+              <img src={Vector}></img>
+            </ListItemIcon>
+            <ListItemText className="listItemText">Alerts</ListItemText>
+          </ListItem>
+        </List>
+        <List>
+          <ListItem>
+            <ListItemIcon>
+              <StarIcon />{" "}
+            </ListItemIcon>
+            <ListItemText className="listItemText">Settings</ListItemText>
+            <ListItemIcon>
+              <ArrowDropDownIcon />{" "}
+            </ListItemIcon>
+          </ListItem>
+        </List>
+        <List>
+          <ListItem>
+            <ListItemText className="listItemText">Billings</ListItemText>
+          </ListItem>
         </List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
+        <Home />
       </main>
     </div>
   );

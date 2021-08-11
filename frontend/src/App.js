@@ -1,10 +1,10 @@
 import React from "react";
-import Home from "./Pages/Home";
+import Appbar from "./Components/Appbar";
 
 function App() {
   return (
     <div>
-      <Home />
+      <Appbar />
     </div>
   );
 }
