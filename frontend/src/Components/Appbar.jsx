@@ -18,6 +18,7 @@ import StarIcon from "@material-ui/icons/Star";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import "./../Components/Appbar.css";
 import Home from "../Pages/Home";
+import Table from "./Table";
 
 const drawerWidth = 240;
 
@@ -52,13 +53,6 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "'Poppins', sans-serif",
     letterSpacing: "0.15px",
     color: "white",
-  },
-  listItemText: {
-    color: "red",
-    fontFamily: "'Exo', sans-serif",
-    fontWeight: "500",
-    fontSize: "14px",
-    letterSpacing: "0.1px",
   },
 }));
 
@@ -172,6 +166,7 @@ export default function PermanentDrawerLeft() {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <Home />
+        <Table />
       </main>
     </div>
   );
