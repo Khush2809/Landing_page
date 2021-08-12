@@ -4,21 +4,23 @@ import Drawer from "@material-ui/core/Drawer";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
-import List from "@material-ui/core/List";
 import Typography from "@material-ui/core/Typography";
-import Divider from "@material-ui/core/Divider";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
 import image14 from "../Images/image14.svg";
 import HomeIcon from "@material-ui/icons/Home";
 import GroupIcon from "@material-ui/icons/Group";
-import Vector from "../Images/Vector.png";
 import StarIcon from "@material-ui/icons/Star";
 import ArrowDropDownIcon from "@material-ui/icons/ArrowDropDown";
 import "./../Components/Appbar.css";
 import Home from "../Pages/Home";
 import Table from "./Table";
+import { Button, Container } from "@material-ui/core";
+import { IoCalendarClearOutline } from "react-icons/io5";
+import Avatar from "@material-ui/core/Avatar";
+import Paper from "@material-ui/core/Paper";
+import InputBase from "@material-ui/core/InputBase";
+import Divider from "@material-ui/core/Divider";
+import IconButton from "@material-ui/core/IconButton";
+import ArrowRightAltIcon from "@material-ui/icons/ArrowRightAlt";
 
 const drawerWidth = 240;
 
@@ -37,14 +39,14 @@ const useStyles = makeStyles((theme) => ({
   drawerPaper: {
     width: drawerWidth,
   },
-  // necessary for content to be below app bar
-  // toolbar: theme.mixins.toolbar,
+
   toolbar: {
     paddingBottom: "3%",
   },
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
+    backgroundColor: "#E5E5E5",
   },
   logo: {
     fontFamily: "'Poppins', sans-serif",
@@ -53,6 +55,49 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "'Poppins', sans-serif",
     letterSpacing: "0.15px",
     color: "white",
+  },
+  root1: {
+    padding: "2px 4px",
+    display: "flex",
+    alignItems: "center",
+    width: "347.5px",
+    height: "37.46px",
+  },
+  input: {
+    marginLeft: theme.spacing(1),
+    flex: 1,
+  },
+  iconButton: {
+    // padding: 10,
+    fontFamily: "'Poppins', sans-serif",
+    fontSize: "12px",
+    color: "rgba(63, 14, 64, 1)",
+  },
+  divider: {
+    height: 28,
+    margin: 4,
+  },
+  btn: {
+    fontFamily: "'Poppins', sans-serif",
+    textTransform: "Capitalize",
+    borderRadius: "0px",
+    justifyContent: "start",
+    fontSize: "14px",
+    color: "rgba(0, 0, 0, 0.54)",
+    "&:hover": {
+      color: "white",
+      backgroundColor: "rgba(63, 14, 64, 1)",
+    },
+  },
+  end: {
+    display: "flex",
+    justifyContent: "center",
+  },
+  btn1: {
+    backgroundColor: "rgba(63, 14, 64, 1)",
+    fontFamily: "'Poppins', sans-serif",
+    color: "white",
+    marginTop: "2%",
   },
 }));
 
@@ -63,11 +108,6 @@ export default function PermanentDrawerLeft() {
     <div className={classes.root}>
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
-        {/* <Toolbar>
-          <Typography variant="h6" noWrap>
-            Permanent drawer
-          </Typography>
-        </Toolbar> */}
         <Toolbar
           style={{
             display: "flex",
@@ -77,7 +117,53 @@ export default function PermanentDrawerLeft() {
           }}
         >
           <Typography className={classes.logo1}>KEYWORDS</Typography>
-          <h5>Hello</h5>
+          {/* <h5>Hello</h5> */}
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "space-between",
+            }}
+          >
+            <div>
+              <Paper component="form" className={classes.root1}>
+                {/* <IconButton className={classes.iconButton} aria-label="menu">
+                  <MenuIcon />
+                </IconButton> */}
+                <InputBase
+                  className={classes.input}
+                  // placeholder="Search Google Maps"
+                  // inputProps={{ "aria-label": "search google maps" }}
+                />
+                <IconButton
+                  type="submit"
+                  className={classes.iconButton}
+                  aria-label="search"
+                >
+                  SUBMIT
+                </IconButton>
+                {/* <Divider className={classes.divider} orientation="vertical" /> */}
+                <IconButton
+                  color="primary"
+                  className={classes.iconButton}
+                  aria-label="directions"
+                >
+                  <ArrowRightAltIcon />{" "}
+                </IconButton>
+              </Paper>
+            </div>
+            <div>
+              <Avatar
+                style={{
+                  backgroundColor: "white",
+                  color: "rgba(63, 14, 64, 1)",
+                  marginLeft: "10px",
+                }}
+              >
+                A
+              </Avatar>
+            </div>
+          </div>
         </Toolbar>
       </AppBar>
       <Drawer
@@ -104,69 +190,39 @@ export default function PermanentDrawerLeft() {
           <h3 className={classes.logo}>TermMonitor</h3>
         </div>
         <Divider />
-        <List>
-          <ListItem>
-            <ListItemIcon>
-              {" "}
-              <HomeIcon />{" "}
-            </ListItemIcon>
-            <ListItemText className="listItemText">Add Keywords</ListItemText>
-          </ListItem>
-        </List>
-        <List>
-          <ListItem>
-            <ListItemIcon>
-              {" "}
-              <GroupIcon />{" "}
-            </ListItemIcon>
-            <ListItemText className="listItemText">Matches</ListItemText>
-          </ListItem>
-        </List>
-        <List>
-          <ListItem>
-            <ListItemIcon>
-              <img src={Vector}></img>
-            </ListItemIcon>
-            <ListItemText className="listItemText">Manage sources</ListItemText>
-          </ListItem>
-        </List>
-        <List>
-          <ListItem>
-            <ListItemIcon>
-              <img src={Vector}></img>
-            </ListItemIcon>
-            <ListItemText className="listItemText">Integration</ListItemText>
-          </ListItem>
-        </List>
-        <List>
-          <ListItem>
-            <ListItemIcon>
-              <img src={Vector}></img>
-            </ListItemIcon>
-            <ListItemText className="listItemText">Alerts</ListItemText>
-          </ListItem>
-        </List>
-        <List>
-          <ListItem>
-            <ListItemIcon>
-              <StarIcon />{" "}
-            </ListItemIcon>
-            <ListItemText className="listItemText">Settings</ListItemText>
-            <ListItemIcon>
-              <ArrowDropDownIcon />{" "}
-            </ListItemIcon>
-          </ListItem>
-        </List>
-        <List>
-          <ListItem>
-            <ListItemText className="listItemText">Billings</ListItemText>
-          </ListItem>
-        </List>
+        <Button startIcon={<HomeIcon />} className={classes.btn}>
+          Add Keywords
+        </Button>
+        <Button startIcon={<GroupIcon />} className={classes.btn}>
+          Matches{" "}
+        </Button>
+        <Button startIcon={<IoCalendarClearOutline />} className={classes.btn}>
+          Manage sources{" "}
+        </Button>
+        <Button startIcon={<IoCalendarClearOutline />} className={classes.btn}>
+          Integration
+        </Button>
+        <Button startIcon={<IoCalendarClearOutline />} className={classes.btn}>
+          Alerts{" "}
+        </Button>
+        <Button
+          startIcon={<StarIcon />}
+          endIcon={<ArrowDropDownIcon />}
+          className={classes.btn}
+        >
+          Settings
+        </Button>
+        <Button className={classes.btn}>Billings</Button>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <Home />
         <Table />
+        <Container className={classes.end}>
+          <Button className={classes.btn1} variant="contained" size="large">
+            Save Filters
+          </Button>{" "}
+        </Container>
       </main>
     </div>
   );

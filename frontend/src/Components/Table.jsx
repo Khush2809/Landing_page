@@ -1,17 +1,47 @@
 import React, { useState, useEffect } from "react";
 import MaterialTable from "material-table";
-import Clear from "@material-ui/icons/Clear";
+// import "./../Components/Appbar.css";
+import DeleteIcon from "@material-ui/icons/Delete";
+import SearchIcon from "@material-ui/icons/Search";
+import { Container } from "@material-ui/core";
 
 const Table = () => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState();
+
   const columns = [
     {
       title: "Keywords",
       field: "keyword",
     },
     {
+      title: "",
+      field: "name",
+      render: () => (
+        <div>
+          <SearchIcon />
+        </div>
+      ),
+    },
+    {
       title: "Goal",
-      field: "goal  ",
+      field: "goal",
+    },
+    {
+      title: "Matches",
+      field: "matches",
+    },
+    {
+      title: "Search Status",
+      field: "search_status",
+    },
+    {
+      title: "Delete Keyword",
+      field: "name",
+      render: () => (
+        <div>
+          <DeleteIcon />
+        </div>
+      ),
     },
   ];
   useEffect(() => {
@@ -20,13 +50,42 @@ const Table = () => {
     )
       .then((resp) => resp.json())
       .then((resp) => {
-        console.log(resp);
-        setData(resp);
+        console.log(resp.data);
+        setData(resp.data);
       });
   }, []);
+  //   const [data, setData] = useState([]);
+  //   const columns = [
+  //     { title: "ID", field: "id" },
+  //     { title: "Username", field: "username" },
+  //     { title: "Name", field: "name" },
+  //     { title: "Email", field: "email" },
+  //     { title: "Phone", field: "phone" },
+  //     { title: "Web Link", field: "website" },
+  //   ];
+  //   useEffect(() => {
+  //     fetch("https://jsonplaceholder.typicode.com/users")
+  //       .then((resp) => resp.json())
+  //       .then((resp) => {
+  //         setData(resp);
+  //       });
+  //   }, []);
   return (
     <div>
-      <MaterialTable title="data" data={data} columns={columns} />
+      <Container>
+        <MaterialTable
+          title=""
+          data={data}
+          columns={columns}
+          options={{
+            search: false,
+            paging: false,
+            cellStyle: {
+              justifyContent: "center",
+            },
+          }}
+        />
+      </Container>
     </div>
   );
 };
