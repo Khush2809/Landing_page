@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/Nurture/static/css/main.f759639f.chunk.css",
+    "main.js": "/Nurture/static/js/main.2cda2f89.chunk.js",
+    "main.js.map": "/Nurture/static/js/main.2cda2f89.chunk.js.map",
+    "runtime-main.js": "/Nurture/static/js/runtime-main.320d1464.js",
+    "runtime-main.js.map": "/Nurture/static/js/runtime-main.320d1464.js.map",
+    "static/js/2.cd6482a0.chunk.js": "/Nurture/static/js/2.cd6482a0.chunk.js",
+    "static/js/2.cd6482a0.chunk.js.map": "/Nurture/static/js/2.cd6482a0.chunk.js.map",
+    "static/js/3.f8b48ab0.chunk.js": "/Nurture/static/js/3.f8b48ab0.chunk.js",
+    "static/js/3.f8b48ab0.chunk.js.map": "/Nurture/static/js/3.f8b48ab0.chunk.js.map",
+    "static/js/4.fc9d85f6.chunk.js": "/Nurture/static/js/4.fc9d85f6.chunk.js",
+    "static/js/4.fc9d85f6.chunk.js.map": "/Nurture/static/js/4.fc9d85f6.chunk.js.map",
+    "static/js/5.b091a66a.chunk.js": "/Nurture/static/js/5.b091a66a.chunk.js",
+    "static/js/5.b091a66a.chunk.js.map": "/Nurture/static/js/5.b091a66a.chunk.js.map",
+    "static/js/6.ac5f0089.chunk.js": "/Nurture/static/js/6.ac5f0089.chunk.js",
+    "static/js/6.ac5f0089.chunk.js.map": "/Nurture/static/js/6.ac5f0089.chunk.js.map",
+    "index.html": "/Nurture/index.html",
+    "static/css/main.f759639f.chunk.css.map": "/Nurture/static/css/main.f759639f.chunk.css.map",
+    "static/js/2.cd6482a0.chunk.js.LICENSE.txt": "/Nurture/static/js/2.cd6482a0.chunk.js.LICENSE.txt",
+    "static/js/3.f8b48ab0.chunk.js.LICENSE.txt": "/Nurture/static/js/3.f8b48ab0.chunk.js.LICENSE.txt",
+    "static/js/4.fc9d85f6.chunk.js.LICENSE.txt": "/Nurture/static/js/4.fc9d85f6.chunk.js.LICENSE.txt",
+    "static/js/5.b091a66a.chunk.js.LICENSE.txt": "/Nurture/static/js/5.b091a66a.chunk.js.LICENSE.txt",
+    "static/media/image14.b87b45ed.svg": "/Nurture/static/media/image14.b87b45ed.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.320d1464.js",
+    "static/js/3.f8b48ab0.chunk.js",
+    "static/css/main.f759639f.chunk.css",
+    "static/js/main.2cda2f89.chunk.js"
+  ]
+}
